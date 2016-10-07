@@ -16,8 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.igniva.youtubeplayer.model.DataGalleryPojo;
 import com.igniva.youtubeplayer.model.DataYoutubePojo;

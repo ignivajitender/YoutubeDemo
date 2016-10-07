@@ -30,7 +30,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
-import com.google.android.gms.appindexing.AppIndex;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.igniva.youtubeplayer.R;
 import com.igniva.youtubeplayer.controller.BasicImageDownloader;
@@ -74,7 +74,7 @@ ProgressDialog prog;
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
+   // private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -259,20 +259,20 @@ ProgressDialog prog;
         });
 
 
-  client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+  //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        client.connect();
+       // client.connect();
 
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        client.disconnect();
+    //    client.disconnect();
     }
 
     public class image_adapter extends PagerAdapter {

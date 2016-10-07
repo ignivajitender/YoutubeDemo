@@ -27,7 +27,7 @@ import com.igniva.youtubeplayer.ui.activities.MainActivity;
 import com.igniva.youtubeplayer.ui.fragments.CategoriesFragment;
 import com.igniva.youtubeplayer.utils.QualityEnum;
 import com.igniva.youtubeplayer.utils.YouTubeThumbnail;
-import com.squareup.picasso.Picasso;
+
 
 /**
  * Created by igniva-php-08 on 20/5/16.
@@ -102,10 +102,21 @@ public class CategoryListAdapterChannels  extends RecyclerView.Adapter<CategoryL
 
             holder.mTvCategoryText.setText(mImageName.get(position));
 
-            Picasso.with(mContext)
+//            Picasso.with(mContext)
+//                    .load(mImageUrl.get(position))
+//                    .fit()
+//                    .into(holder.mTvCategoryImg);
+
+
+            Glide
+                    .with(mContext)
+
                     .load(mImageUrl.get(position))
-                    .fit()
-                    .into(holder.mTvCategoryImg);
+//                    .bitmapTransform( new jp.wasabeef.glide.transformations.BlurTransformation( mContext, 10 ) )
+                    .placeholder(R.drawable.loading)
+
+                    .into( holder.mTvCategoryImg );
+
 
             final DatabaseHandler db = new DatabaseHandler(mContext);
 

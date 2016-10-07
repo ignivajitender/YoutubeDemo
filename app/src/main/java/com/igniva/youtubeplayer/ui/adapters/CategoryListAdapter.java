@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.bumptech.glide.Glide;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.igniva.youtubeplayer.R;
 import com.igniva.youtubeplayer.model.DataYoutubePojo;
@@ -31,7 +32,7 @@ import com.igniva.youtubeplayer.utils.QualityEnum;
 import com.igniva.youtubeplayer.ui.activities.YouTubePlayerActivity;
 import com.igniva.youtubeplayer.utils.UtilsUI;
 import com.igniva.youtubeplayer.utils.YouTubeThumbnail;
-import com.squareup.picasso.Picasso;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,10 +129,20 @@ public  static ArrayList<String> mListCategories=new ArrayList<>();;
 
             holder.mRatingBar.setRating(Float.parseFloat(mListRating.get(position).toString()));
 
-            Picasso.with(mContext)
-                    .load(YouTubeThumbnail.getUrlFromVideoId(mListCategories.get(position), QualityEnum.HIGH))
-                    .fit()
-                    .into(holder.mTvCategoryImg);
+//            Picasso.with(mContext)
+//                    .load(YouTubeThumbnail.getUrlFromVideoId(mListCategories.get(position), QualityEnum.HIGH))
+//                    .fit()
+//                    .into(holder.mTvCategoryImg);
+
+            Glide
+                    .with(mContext)
+
+                    .load(mListCategories.get(position))
+//                    .bitmapTransform( new jp.wasabeef.glide.transformations.BlurTransformation( mContext, 10 ) )
+                    .placeholder(R.drawable.loading)
+
+                    .into( holder.mTvCategoryImg );
+
 
             holder.mTvCategoryName.setText(mListNames.get(position));
             holder.mTvCategoryDuration.setText(mListDuration.get(position));

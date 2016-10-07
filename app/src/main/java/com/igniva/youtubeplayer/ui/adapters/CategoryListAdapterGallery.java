@@ -26,9 +26,7 @@ import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.igniva.youtubeplayer.R;
 import com.igniva.youtubeplayer.ui.activities.All_Image_View;
 import com.igniva.youtubeplayer.utils.Blur;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
